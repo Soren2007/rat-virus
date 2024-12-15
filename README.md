@@ -47,4 +47,4 @@ python client.py
 
 ## EXAMPLES
 
-[![Watch the video](https://github.com/Soren2007/rat-virus/blob/master/image.jpg)](https://darsmanco.ir/media/images/temp/Example.mp4)
+[![Watch the video](https://github.com/Soren2007/rat-virus/blob/master/poster.jpg)](https://darsmanco.ir/media/images/temp/Example.mp4)
