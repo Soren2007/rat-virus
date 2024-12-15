@@ -16,3 +16,22 @@
 ```bash
 git clone https://github.com/Soren2007/rat-virus.git
 ```
+
+### 2. Read 'DIGISPARK-RAT-INSTALLER' repository
+
+[Section 'DIGISPARK-RAT-INSTALLER.git'](https://github.com/Soren2007/digispark-rat-installer) 
+
+### 3. Run 'server.py' file
+
+```bash
+python server.py
+```
+### 4. Run 'client.py' file ro connect digispark usb
+
+```bash
+python client.py
+```
+
+## COMMANDS
+
+### 1. CMD
