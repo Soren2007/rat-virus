@@ -32,6 +32,7 @@ To install malware using digispak, you can read and use the link below.
 ```bash
 python server.py
 ```
+When you run this file, it waits for a connection to the target system. Once connected, you can run commands.
 
 ### 4. Run 'client.py' file ro connect digispark usb
 
@@ -39,6 +40,7 @@ python server.py
 ```bash
 python client.py
 ```
+If you ran it on the target system using digispark, you don't need to run this file. If not, you will need to run this file manually.
 
 ## COMMANDS
 
@@ -94,7 +96,8 @@ Using the gf!file_path command, you can download a file from the target system a
 
 Example:
 ```
-gf!C:\Users\uname\Desktop\file.pdf
+gf!C:\Users\Soren\Desktop\1963299127-132682296-1.mp4
 ```
+![](https://github.com/Soren2007/rat-virus/blob/master/gifs/save_file.gif)
 
 ### 3. HOTKEY
