@@ -52,9 +52,19 @@ python client.py
 
 
 ### 1. CMD
+Using the cmd!command command, you can run all cmd commands on the target system and get their output.
 
+Example:
+```
+cmd!ipconfig
+```
 
+### 2. GET FILE
+Using the gf!file_path command, you can download a file from the target system and save it to the specified path.
 
-## EXAMPLES
+Example:
+```
+gf!C:\Users\uname\Desktop\file.pdf
+```
 
-[![Watch the video](https://github.com/Soren2007/rat-virus/blob/master/poster.jpg)](https://darsmanco.ir/media/images/temp/Example.mp4)
+### 3. HOTKEY
