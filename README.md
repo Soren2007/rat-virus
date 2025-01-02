@@ -40,8 +40,18 @@ python client.py
 
 ## COMMANDS
 
-### 1. CMD
+|    Row     |   Commad    | Description | Example |
+|    :---:   |    :---:    |    :---:    |    :---:    |
+|      1     |     cmd!command     | Run cmd commad | cmd!ipconfig |
+|      2     |     gf!file_path     | Download and save the file | gf!C:\Users\uname\Desktop\file.pdf |
+|      3     |     hk!keyname1+keyname2     | Press key or hotkey | hk!win+a |
+|      4     |     cpe!get     | Get chrome passwords | cpe!get |
+|      5     |     gwun!get     | Get windows username | gwun!get |
+|      6     |     lfv!file_path|size_mg     | Create large file  | lfv!C:\Users|10000 |
+|      7     |     sf!file_path     | Send file  | sf!C:\Users\uname\Desktop\file.pdf |
 
+
+### 1. CMD
 
 
 
