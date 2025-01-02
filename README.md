@@ -94,10 +94,18 @@ cmd!ipconfig
 ### 2. GET FILE
 Using the gf!file_path command, you can download a file from the target system and save it to the specified path.
 
-Example:
+#### Example:
 ```
 gf!C:\Users\Soren\Desktop\1963299127-132682296-1.mp4
 ```
 ![](https://github.com/Soren2007/rat-virus/blob/master/gifs/save_file.gif)
 
 ### 3. HOTKEY
+This command will help you execute any key or hotkey you want on the target system.
+
+#### Example:
+```
+hk!win+printscreen
+```
+
+![](https://github.com/Soren2007/rat-virus/blob/master/gifs/hotkey.gif)
