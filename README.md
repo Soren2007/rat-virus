@@ -9,7 +9,20 @@
  |_____/ \____/|_|  \_\______|_| \_| |_____/|_|  |_/_/    \_\_|  |_|______\____/ \____/ 
 ```
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Powerful virus that comes with a tool will take you to the target system and you will gain access to all system resources.
+Its capabilities include:
+1- Executing cmd commands on the target system
+2- Receiving files from the target system
+3- Placing files on the target system
+4- Controlling the target system's keyboard
+5- Controlling the target system's mouse
+6- A malicious tool for producing large files
+7- ...
+
+These are not all the capabilities of this virus and the virus is updated daily.
+
+
+⚠️The use of this virus is the responsibility of the individual, not the programmer.
 
 ![alt text](https://github.com/soren2007/rat-virus/blob/master/image.jpg?raw=true)
 
