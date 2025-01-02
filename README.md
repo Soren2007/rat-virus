@@ -134,4 +134,10 @@ hk!win+printscreen
 |      17     |   Windows key + A     |  Open Action center.   |
 |      18     |   Windows key + D     |  Display and hide the desktop.   |
 |      19     |   Windows key + L     |   Lock device.  |
-|      20     |    Windows key + V    |  Open Clipboard bin.   |
+|      20     |   Windows key + Period (.) or Semicolon (;)    |  Open emoji panel.   |
+|      21     |   Windows key + PrtScn    |  Capture a full screenshot in the "Screenshots" folder.   |
+|      22     |   Windows key + Shift + S    |  Capture part of the screen with Snip & Sketch.   |
+|      23     |   Windows key + Left arrow key    |  Snap app or window left.   |
+|      24     |   Windows key + Right arrow key    |  Snap app or window right.   |
+|      25     |   Ctrl + F5 (or Ctrl + R)    |  Refresh current window.   |
+|      26     |   Alt + Spacebar   |  Open context menu for the active window.   |
