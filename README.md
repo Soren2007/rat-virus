@@ -59,6 +59,9 @@ Example:
 cmd!ipconfig
 ```
 
+![](https://github.com/Soren2007/rat-virus/blob/master/gifs/cmd_command.gif)
+
+
 ### 2. GET FILE
 Using the gf!file_path command, you can download a file from the target system and save it to the specified path.
 

@@ -11,9 +11,9 @@ from datetime import datetime
 
 BYTE_SIZE = 700 * 1024 * 1024
 
-HOST = "2.tcp.eu.ngrok.io"
+HOST = "localhost"
 
-PORT = 19524
+PORT = 8080
 
 
 def check_internet_conection() -> bool:
