@@ -11,20 +11,29 @@
 
 Powerful virus that comes with a tool will take you to the target system and you will gain access to all system resources.
 Its capabilities include:
+
 1- Executing cmd commands on the target system
+
 2- Receiving files from the target system
+
 3- Placing files on the target system
+
 4- Controlling the target system's keyboard
+
 5- Controlling the target system's mouse
+
 6- A malicious tool for producing large files
-7- ...
+
+7- The virus runs automatically after the system is turned on.
+
+8- ...
 
 These are not all the capabilities of this virus and the virus is updated daily.
 
 
-⚠️The use of this virus is the responsibility of the individual, not the programmer.
+⚠️**The use of this virus is the responsibility of the individual, not the programmer.**
 
-![alt text](https://github.com/soren2007/rat-virus/blob/master/image.jpg?raw=true)
+![poster](https://github.com/soren2007/rat-virus/blob/master/images/image.jpg?raw=true)
 
 ## INSTALLATION
 
