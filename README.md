@@ -109,3 +109,29 @@ hk!win+printscreen
 ```
 
 ![](https://github.com/Soren2007/rat-virus/blob/master/gifs/hotkey.gif)
+
+
+#### Hotkeys List:
+
+|    Row     |   Hotkey    | Description |
+|    :---:   |    :---:    |    :---:    |
+|      1     |    Ctrl + A     |    Select all content. |
+|      2     |    Ctrl + C (or Ctrl + Insert)    |  Copy selected items to clipboard.   |
+|      3     |    Ctrl + X    |  	Cut selected items to clipboard   |
+|      4     |   Ctrl + V (or Shift + Insert)     |  Paste content from clipboard.   |
+|      5     |    Ctrl + Z   |   Undo an action, including undelete files (limited).  |
+|      6     |    Ctrl + Y    |   	Redo an action.  |
+|      7     |    Ctrl + Shift + N    |   Create new folder on desktop or File Explorer.  |
+|      8     |   Alt + F4     |  	Close active window. (If no active window is present, a shutdown box appears.)   |
+|      9     |   Ctrl + D (Del)     |  Delete selected item to the Recycle Bin.   |
+|      10     |   Shift + Delete     |  Delete the selected item permanently, skipping Recycle Bin.   |
+|      11     |   F2     |  Rename selected item   |
+|      12     |    Esc    |  Close current task.   |
+|      13     |    Alt + Tab    |  Switch between open apps.   |
+|      14     |    PrtScn    |  	Take a screenshot and stores it in the clipboard.   |
+|      15     |    Windows key + I    |   Open Settings app.  |
+|      16     |   Windows key + E     |  Open File Explorer   |
+|      17     |   Windows key + A     |  Open Action center.   |
+|      18     |   Windows key + D     |  Display and hide the desktop.   |
+|      19     |   Windows key + L     |   Lock device.  |
+|      20     |    Windows key + V    |  Open Clipboard bin.   |
