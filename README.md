@@ -163,3 +163,7 @@ hk!win+printscreen
 |      24     |   Windows key + Right arrow key    |  Snap app or window right.   |
 |      25     |   Ctrl + F5 (or Ctrl + R)    |  Refresh current window.   |
 |      26     |   Alt + Spacebar   |  Open context menu for the active window.   |
+
+
+
+## EXAMPLES
